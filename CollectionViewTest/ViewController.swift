@@ -12,8 +12,10 @@ class ViewController: UIViewController
 {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var dataSource : MyDataSource = MyDataSource()
+    
     var collectionViewDelegate : MyCollectionViewDelegate = MyCollectionViewDelegate()
     
     override func viewDidLoad() {
@@ -22,6 +24,8 @@ class ViewController: UIViewController
         
         self.collectionView.dataSource = self.dataSource
         self.collectionView.delegate = self.collectionViewDelegate
+        
+        self.scrollView.contentSize = CGSizeMake(600, 400)
         
     }
 
@@ -37,7 +41,7 @@ class MyDataSource : NSObject, UICollectionViewDataSource{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 31;
+        return 531;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
