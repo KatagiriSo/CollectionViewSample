@@ -37,11 +37,12 @@ class ViewController: UIViewController
 
 
 class MyDataSource : NSObject, UICollectionViewDataSource{
+
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 531;
+        return 100;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
@@ -53,7 +54,7 @@ class MyDataSource : NSObject, UICollectionViewDataSource{
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
     {
-        return 1;
+        return 5;
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
@@ -71,9 +72,24 @@ class MyDataSource : NSObject, UICollectionViewDataSource{
     {
         
     }
-
 }
 
 class MyCollectionViewDelegate :NSObject, UICollectionViewDelegate {
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let v = collectionView.cellForItemAtIndexPath(indexPath)
+        v?.backgroundColor = UIColor.whiteColor()
+    }
+    
 }
+
+class MyFlowLayout: UICollectionViewFlowLayout {
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+//    {
+//        let size = CGSize(width: 400, height: 50)
+//        return size
+//    }
+}
+
+
